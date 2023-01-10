@@ -1,9 +1,11 @@
-function findTheAverage(a,b) {
-    avg = (a+b) / 2;
-    return avg;
+function findTheAverage(inputArray) {
+    let sum = 0; 
+    for(let element of inputArray) {
+        sum += element;
+    }
+return (sum/(inputArray.length));
 }
 
-a = 5
-b = 13
-x = findTheAverage(a,b);
-console.log(x);             // Expected: 9
+inputArray = [2,6,12,0]
+x = findTheAverage(inputArray);
+console.log(x);        
