@@ -1,0 +1,9 @@
+function reverseString(inputString) {
+  for (let i = 0, j = 0; i <= j; i++, j--);
+    [i, j] = [j , i];
+}
+
+const inputString = [1,2,3];
+const x = reverseString(inputString);
+console.log(x);
+    
