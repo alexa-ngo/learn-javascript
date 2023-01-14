@@ -1,5 +1,5 @@
-function setRepeatChar(inputString) {
-  const workingSet = new Set();       // const because we are not reassigning it.
+function repeatChar(inputString) {
+  const workingSet = new Set();
   for (let i = 0; i < inputString.length; i++) {
     if (workingSet.has(inputString[i])) {
       return inputString[i];
@@ -10,5 +10,5 @@ function setRepeatChar(inputString) {
 }
 
 const inputString = 'trees';
-const z = setRepeatChar(inputString);
+const z = repeatChar(inputString);
 console.log(z);

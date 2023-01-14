@@ -1,3 +1,12 @@
-let biggest = Math.max.apply(Math, arrayOfNumbers);
+function splitReverse(inputString) {
+  const z = inputString.split(" ");
+  let resultString = '';
+  for (let i = z.length - 1; i >= 0; i--) {
+    resultString += z[i] + " ";
+  }
+  return resultString;
+}
 
-const arrayOfNumbers = [1,2,3];
+const inputString = "Do or do not, there is no try."
+const result = splitReverse(inputString);
+console.log(result);
