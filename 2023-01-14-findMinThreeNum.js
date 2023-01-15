@@ -1,12 +1,10 @@
-function findMin(val1, val2, val3) {
-  const comparison = Math.min(val1, val2, val3);
-  return comparison;
+function findMin(x, y, z) {
+  const result = Math.min(x, y, z);
+  return result;
 }
 
-
-
-const val1 = 5;
-const val2 = 7; 
-const val3 = 9;
-const result = findMin(val1, val2, val3); 
+const x = 5;
+const y = 9; 
+const z = 16;
+const result = findMin(x, y, z);
 console.log(result);

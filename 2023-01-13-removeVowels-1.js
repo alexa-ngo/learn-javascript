@@ -1,8 +1,8 @@
 function removeVowels(inputString) {
-  let resultString = "";
+  const resultString = "";
   for (let i = 0; i < inputString.length; i++) {
-    if (inputString[i] === 'a' || inputString[i] === 'e' || inputString[i] === 'i' || inputString[i] === 'o' || inputString[i] === 'u') {
-      continue;
+    if (inputString[i] === 'a' || inputString[i] === 'e' || inputString[i] === 'i' || inputString[i] ==='o' || inputString[i] === 'u') {
+      continue; 
     } else {
       resultString += inputString[i];
     }
@@ -10,7 +10,6 @@ function removeVowels(inputString) {
   return resultString;
 }
 
-const inputString = 'alexa';
-const z = removeVowels(inputString);
-console.log(z);
-
+const inputString = 'louie';
+const x = removeVowels(inputString);
+console.log(x);
