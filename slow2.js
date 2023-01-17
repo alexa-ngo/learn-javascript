@@ -1,4 +1,2 @@
-import { Circle } from "./slow";
+import {mean, stddev} from "./slow.js";
 
-import("./slow.js").then(Circle =>
-  let newCircle = Circle.area())

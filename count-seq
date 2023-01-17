@@ -1,0 +1,78 @@
+class Stack {
+
+  constructor()
+  {
+    this.items = [];
+  }
+
+  push(element)
+  {
+    this.items.push(element);
+  }
+
+  pop()
+  {
+    const poppedItem = this.items.pop();
+    return poppedItem;
+  }
+
+  top()
+  {
+    let topOfStack = this.items.length;
+    return this.items[topOfStack-1];
+  }
+
+  isEmpty()
+  {
+    if (this.items.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+
+theStack = new Stack();
+theStack.push(5);
+
+
+
+function countSeq(n) {
+  let charStack = new Stack();
+  let currSeq = "1";
+
+  for (let index = 1; index < n; index++) {
+
+    let count = 0;
+    let result = "";
+
+    for (let i = 0; i < currSeq.length; i++) {
+      if (charStack.isEmpty() === false && currSeq[i] !== charStack.top()){
+;
+        while (charStack.isEmpty() === false){
+          workingChar = charStack.top();
+          charStack.pop();
+          count += 1;
+        }
+        result = result + `${count}` + workingChar;
+        count = 0;
+      }
+      charStack.push(currSeq[i]);
+    }
+
+    if (charStack.isEmpty() === false) {
+      topOfEndingStack = charStack.top();
+      while (charStack.isEmpty() === false) {
+        charStack.pop();
+        count += 1;
+      }
+      result = result + `${count}` + topOfEndingStack;
+    }
+    currSeq = result;
+  }
+  return currSeq;
+}
+
+stack = new Stack();
+console.log(countSeq(5)); // 37218
