@@ -12,8 +12,7 @@ class Stack {
 
   pop()
   {
-    const poppedItem = this.items.pop();
-    return poppedItem;
+    return this.items.pop();
   }
 
   top()
@@ -22,9 +21,10 @@ class Stack {
     return this.items[topOfStack-1];
   }
 
+
   isEmpty()
   {
-    if (this.items.length === 0) {
+    if (this.items === 0){
       return true;
     } else {
       return false;
@@ -32,23 +32,27 @@ class Stack {
   }
 }
 
-
-theStack = new Stack();
-theStack.push(5);
-
-
+alexaStack = new Stack();
+alexaStack.push(5);
+alexaStack.push(35);
+//console.log(alexaStack);
+alexaStack.pop();
+//console.log(alexaStack);
+alexaStack.push(99);
+alexaStack.push(75);
+//console.log(alexaStack);
+console.log(alexaStack.top());
 
 function countSeq(n) {
-  let charStack = new Stack();
-  let currSeq = "1";
+  const charStack = new Stack();
+  let currSeq = '1';
 
-  for (let index = 1; index < n; index++) {
-
-    let count = 0;
+  for(let index = 1; index < n; index++){
     let result = "";
+    let count = 0;
 
-    for (let i = 0; i < currSeq.length; i++) {
-      if (charStack.isEmpty() === false && currSeq[i] !== charStack.top()){
+    for (let i = 0; i < currSeq.length; i++){
+      if (charStack.isEmpty() === false && charStack.top() !== currSeq[i]){
         while (charStack.isEmpty() === false){
           workingChar = charStack.top();
           charStack.pop();
@@ -59,10 +63,9 @@ function countSeq(n) {
       }
       charStack.push(currSeq[i]);
     }
-
-    if (charStack.isEmpty() === false) {
+    if (charStack.isEmpty()===false) {
       topOfEndingStack = charStack.top();
-      while (charStack.isEmpty() === false) {
+      while(charStack.isEmpty() === false) {
         charStack.pop();
         count += 1;
       }
@@ -72,6 +75,5 @@ function countSeq(n) {
   }
   return currSeq;
 }
-
-stack = new Stack();
+alexaStack = new Stack();
 console.log(countSeq(5)); // 37218
