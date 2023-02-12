@@ -3,60 +3,44 @@
 <body>
   <style>
     .color-box {
-    background-color: limegreen;
-    width: 100px;
-    height: 100px;
+    background-color: rgb(255, 177, 177);
+    width: 300px;
+    height: 300px;
     }
   </style>
-
-
-<h1>The Element Object</h1>
-<h2>The addEventListener() Method</h2>
-
-<p>Click the button to change its background color.</p>
-
+<h1>Project Event Listeners</h1>
+<br />
+<p><b>Click the button to change its background color.</b></p>
 <button class="event-button" id="myBtn">Try it</button>
-
 <br>
 <br>
 <br>
 <p><b>Type Into Me:</b></p>
 <input placeholder="type into me!" class="input-to-copy"/>
 <p class="p-to-copy-to">Nothing has happened yet.</p>
-
 <br>
 <p><b>Color Input: </b></p>
-<div class="color-box" id="myDiv" style="border:thick solid blue;">   This is myDiv.  </div>
-<button type="button" onclick="myFunctionForBorder()">Double Red</button>
-
+<div class="color-box" id="myDiv" style="border:thick solid blue">   Pick a border color and square color!  </div>
+<button type="button" onclick="myFunctionForBorder('A')">Thick Solid Red</button>
+<button type="button" onclick="myFunctionForBorder('B')">Thick Dotted Green</button>
+<button type="button" onclick="myFunctionForBorder('C')">Thick Dashed Black</button>
 <br>
 <br>
 <p><b>Enter square color: </b></p>
 <input class="color-input" placeholder="Type a color here!" />
 
-<!-- <br>
-<br>
-<p><b>Choose the type of border for the box: </b></p>
-<div class="button-container">
-  <button id="myDiv1">1</button>
-  <button id="myDiv2">2</button>
-  <button id="myDiv3">3</button>
-</div> -->
-
-
 <script>
-
 // Button changes to red color when it is clicked.
 document.getElementById("myBtn").addEventListener("click", function() {
   this.style.backgroundColor = "red";
+  this.style.color = "white";
 });
 
-
-// Button Adds an alert
+// Button adds an alert
 const button = document.querySelector(".event-button");
 button.addEventListener("click", function(){
   alert("Hey there!");
-})
+});
 
 // LiveFeedBackInput
 const feedBackInput = document.querySelector(".input-to-copy");
@@ -64,9 +48,9 @@ const feedBackParagraph = document.querySelector(".p-to-copy-to");
 
 feedBackInput.addEventListener("keyup", function() {
   feedBackParagraph.innerText = feedBackInput.value; 
-})
+});
 
-// For the ColorBox
+// For the square color input box
 const input = document.querySelector(".color-input");
 const paragraph = document.querySelector(".color-box");
 
@@ -74,16 +58,20 @@ input.addEventListener("change", function () {
   paragraph.style.backgroundColor = input.value;
 });
 
-// Change Border Style
-function myFunctionForBorder(input){
-  document.getElementById("myDiv").style.border = "double red";
-  document.getElementById("myDiv1").style.border = "thin dotted red";
-  document.getElementById("myDiv2").style.border = "double blue";
-  document.getElementById("myDiv3").style.border = "solid yellow"
-}
+// Change border style and color
+function myFunctionForBorder(input) {
+  if (input === 'A') {
+    document.getElementById("myDiv").style.border = "thick solid red";
+  }
+  if (input === 'B') {
+    document.getElementById("myDiv").style.border = "thick dotted green";
+  }
+  if (input === 'C') {
+    document.getElementById("myDiv").style.border = "thick dashed black";
+  }
+};
 
 </script>
-
 </body>
 </html>
 
